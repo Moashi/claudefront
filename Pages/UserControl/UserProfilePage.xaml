@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontFitLife.Pages.UserControl.UserProfilePage"
+               Title=""
+  NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#F8F9FA">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <!-- Header con avatar y nombre -->
+            <Frame BackgroundColor="White"   
+                   CornerRadius="15"   
+                   HasShadow="True"   
+                   Padding="25">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Avatar -->
+                    <Frame Grid.Row="0"  
+                           BackgroundColor="#3352FF"   
+                           CornerRadius="50"   
+                           WidthRequest="100"   
+                           HeightRequest="100"  
+                           HorizontalOptions="Center"  
+                           HasShadow="False"  
+                           Padding="0">
+                        <Label Text="👤"   
+                               FontSize="40"   
+                               TextColor="White"  
+                               HorizontalOptions="Center"  
+                               VerticalOptions="Center" />
+                    </Frame>
+
+                    <!-- Nombre completo -->
+                    <Label Grid.Row="1"  
+                           x:Name="NombreCompletoLabel"  
+                           Text="Cargando..."  
+                           FontSize="24"  
+                           FontAttributes="Bold"  
+                           TextColor="#1F2937"  
+                           HorizontalOptions="Center"  
+                           Margin="0,15,0,5" />
+
+                    <!-- Rol y estado -->
+                    <StackLayout Grid.Row="2"   
+                                 Orientation="Horizontal"   
+                                 HorizontalOptions="Center"  
+                                 Spacing="10">
+                        <Frame BackgroundColor="#10B981"   
+                               CornerRadius="12"   
+                               Padding="8,4"   
+                               HasShadow="False">
+                            <Label x:Name="RolLabel"  
+                                   Text="Usuario"  
+                                   FontSize="12"  
+                                   FontAttributes="Bold"  
+                                   TextColor="White" />
+                        </Frame>
+
+                        <Frame x:Name="EstadoFrame"  
+                               BackgroundColor="#10B981"   
+                               CornerRadius="12"   
+                               Padding="8,4"   
+                               HasShadow="False">
+                            <Label x:Name="EstadoLabel"  
+                                   Text="Activo"  
+                                   FontSize="12"  
+                                   FontAttributes="Bold"  
+                                   TextColor="White" />
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+            <!-- Información Personal -->
+            <Frame BackgroundColor="White"   
+                   CornerRadius="15"   
+                   HasShadow="True"   
+                   Padding="20">
+                <StackLayout Spacing="15">
+                    <Label Text="📋 Información Personal"   
+                           FontSize="18"   
+                           FontAttributes="Bold"  
+                           TextColor="#1F2937" />
+
+                    <!-- Cédula (solo lectura) -->
+                    <StackLayout Spacing="5">
+                        <Label Text="Cédula"   
+                               FontSize="14"   
+                               FontAttributes="Bold"  
+                               TextColor="#374151" />
+                        <Frame BackgroundColor="#F3F4F6"   
+                               CornerRadius="8"   
+                               Padding="12"   
+                               HasShadow="False">
+                            <Label x:Name="CedulaLabel"  
+                                   Text="000000000"  
+                                   FontSize="16"  
+                                   TextColor="#6B7280" />
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Email (solo lectura) -->
+                    <StackLayout Spacing="5">
+                        <Label Text="Correo Electrónico"   
+                               FontSize="14"   
+                               FontAttributes="Bold"  
+                               TextColor="#374151" />
+                        <Frame BackgroundColor="#F3F4F6"   
+                               CornerRadius="8"   
+                               Padding="12"   
+                               HasShadow="False">
+                            <Label x:Name="EmailLabel"  
+                                   Text="email@ejemplo.com"  
+                                   FontSize="16"  
+                                   TextColor="#6B7280" />
+                        </Frame>
+                    </StackLayout>
+
+                    <!-- Fecha de Nacimiento (solo lectura) -->
+                    <StackLayout Spacing="5">
+                        <Label Text="Fecha de Nacimiento"   
+                               FontSize="14"   
+                               FontAttributes="Bold"  
+                               TextColor="#374151" />
+                        <Frame BackgroundColor="#F3F4F6"   
+                               CornerRadius="8"   
+                               Padding="12"   
+                               HasShadow="False">
+                            <Label x:Name="FechaNacimientoLabel"  
+                                   Text="No especificada"  
+                                   FontSize="16"  
+                                   TextColor="#6B7280" />
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <!-- Información Editable -->
+            <Frame BackgroundColor="White"   
+                   CornerRadius="15"   
+                   HasShadow="True"   
+                   Padding="20">
+                <StackLayout Spacing="15">
+                    <Label Text="✏️ Información Editable"   
+                           FontSize="18"   
+                           FontAttributes="Bold"  
+                           TextColor="#1F2937" />
+
+                    <!-- Teléfono -->
+                    <StackLayout Spacing="5">
+                        <Label Text="Número de Teléfono"   
+                               FontSize="14"   
+                               FontAttributes="Bold"  
+                               TextColor="#374151" />
+                        <Frame BackgroundColor="#F9FAFB"   
+                               BorderColor="#E5E7EB"   
+                               CornerRadius="8"   
+                               Padding="0"   
+                               HasShadow="False">
+                            <Entry x:Name="TelefonoEntry"  
+                                   Placeholder="Ingresa tu número de teléfono"  
+                                   PlaceholderColor="#9CA3AF"  
+                                   TextColor="#1F2937"  
+                                   FontSize="16"  
+                                   BackgroundColor="Transparent"  
+                                   Keyboard="Telephone"  
+                                   Margin="12" />
+                        </Frame>
+                        <Label x:Name="TelefonoErrorLabel"   
+                               Text="Formato de teléfono inválido"   
+                               FontSize="12"   
+                               TextColor="#EF4444"  
+                               IsVisible="False" />
+                    </StackLayout>
+
+                    <!-- Dirección -->
+                    <StackLayout Spacing="5">
+                        <Label Text="Dirección"   
+                               FontSize="14"   
+                               FontAttributes="Bold"  
+                               TextColor="#374151" />
+                        <Frame BackgroundColor="#F9FAFB"   
+                               BorderColor="#E5E7EB"   
+                               CornerRadius="8"   
+                               Padding="0"   
+                               HasShadow="False">
+                            <Editor x:Name="DireccionEditor"  
+                                    Placeholder="Ingresa tu dirección completa"  
+                                    PlaceholderColor="#9CA3AF"  
+                                    TextColor="#1F2937"  
+                                    FontSize="16"  
+                                    BackgroundColor="Transparent"  
+                                    HeightRequest="80"  
+                                    Margin="12" />
+                        </Frame>
+                        <Label x:Name="DireccionErrorLabel"   
+                               Text="La dirección es muy corta"   
+                               FontSize="12"   
+                               TextColor="#EF4444"  
+                               IsVisible="False" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <!-- Botones de Acción -->
+            <StackLayout Spacing="10">
+                <!-- Botón Guardar Cambios -->
+                <Button x:Name="GuardarButton"  
+                        Text="💾 Guardar Cambios"   
+                        FontSize="16"  
+                        FontAttributes="Bold"  
+                        TextColor="White"  
+                        BackgroundColor="#10B981"  
+                        CornerRadius="12"  
+                        HeightRequest="50"  
+                        Clicked="OnGuardarClicked" />
+
+                <!-- Botón Cambiar Contraseña -->
+                <Button x:Name="CambiarPasswordButton"  
+                        Text="🔒 Cambiar Contraseña"   
+                        FontSize="16"  
+                        FontAttributes="Bold"  
+                        TextColor="#3352FF"  
+                        BackgroundColor="White"  
+                        BorderColor="#3352FF"  
+                        BorderWidth="2"  
+                        CornerRadius="12"  
+                        HeightRequest="50"  
+                        Clicked="OnCambiarPasswordClicked" />
+
+                <!-- Botón Volver -->
+                <Button x:Name="VolverButton"  
+                        Text="⬅️ Volver al Menú"   
+                        FontSize="16"  
+                        FontAttributes="Bold"  
+                        TextColor="#6B7280"  
+                        BackgroundColor="Transparent"  
+                        BorderColor="#D1D5DB"  
+                        BorderWidth="1"  
+                        CornerRadius="12"  
+                        HeightRequest="50"  
+                        Clicked="OnVolverClicked" />
+            </StackLayout>
+
+            <!-- Loading Overlay -->
+            <StackLayout x:Name="LoadingOverlay"  
+                         BackgroundColor="#80000000"  
+                         IsVisible="False"  
+                         Padding="20"  
+                         VerticalOptions="Center"  
+                         HorizontalOptions="Center">
+                <Frame BackgroundColor="White"   
+                       CornerRadius="15"   
+                       Padding="30"  
+                       HasShadow="True">
+                    <StackLayout Orientation="Horizontal"   
+                                 Spacing="15"  
+                                 HorizontalOptions="Center">
+                        <ActivityIndicator IsRunning="True"   
+                                           Color="#3352FF" />
+                        <Label Text="Cargando..."   
+                               FontSize="16"   
+                               VerticalOptions="Center"  
+                               TextColor="#1F2937" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

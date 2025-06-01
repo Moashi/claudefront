@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FrontFitLife.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:FrontFitLife"
+    xmlns:login="clr-namespace:FrontFitLife.Pages.Login"
+    xmlns:admin="clr-namespace:FrontFitLife.Pages.AdminControl"
+    xmlns:user="clr-namespace:FrontFitLife.Pages.UserControl"
+    Shell.FlyoutBehavior="Disabled"
+    Title="FrontFitLife">
+
+    <!-- Página de Login -->
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate login:Log}"
+        Route="login" />
+
+    <!-- Dashboard Administrador -->
+    <ShellContent
+        Title="Admin Dashboard"
+        ContentTemplate="{DataTemplate admin:AdminMenuPage}"
+        Route="AdminDashboard" />
+
+    <!-- Dashboard Usuario -->
+    <ShellContent
+        Title="User Dashboard"
+        ContentTemplate="{DataTemplate user:UserMenuPage}"
+        Route="UserDashboard" />
+    <!-- Página de Perfil de Usuario -->
+    <ShellContent
+        Title="User Profile"
+        ContentTemplate="{DataTemplate user:UserProfilePage}"
+        Route="UserProfile" />
+
+</Shell>
