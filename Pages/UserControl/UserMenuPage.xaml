@@ -2,37 +2,65 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FrontFitLife.Pages.UserControl.UserMenuPage"
-               Title=""
-  NavigationPage.HasNavigationBar="False">
+             Title=""
+             NavigationPage.HasNavigationBar="False">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="280" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!-- Menú Lateral -->
-        <StackLayout Grid.Column="0" BackgroundColor="#4F46E5" Padding="0">
+        <!-- Menú Lateral Profesional -->
+        <StackLayout Grid.Column="0" BackgroundColor="#3352FF" Padding="0">
 
-            <!-- Header del menú -->
-            <Grid BackgroundColor="#4338CA" Padding="20,40,20,20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+            <!-- Header del menú mejorado -->
+            <Grid BackgroundColor="#2A42CC" Padding="25,40,25,30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-                <Label Grid.Column="0" Text="🏃" FontSize="24" TextColor="White" VerticalOptions="Center" />
-                <Label Grid.Column="1" Text="FitLife" FontSize="20" FontAttributes="Bold" TextColor="White" VerticalOptions="Center" Margin="10,0,0,0" />
-                <Frame Grid.Column="2" BackgroundColor="White" CornerRadius="15" WidthRequest="30" HeightRequest="30" Padding="0" HasShadow="False">
-                    <Label Text="US" FontSize="12" FontAttributes="Bold" TextColor="#4F46E5" HorizontalOptions="Center" VerticalOptions="Center" />
+                <!-- Logo/Icono principal -->
+                <Frame Grid.Row="0" 
+                       BackgroundColor="White" 
+                       CornerRadius="20" 
+                       WidthRequest="40" 
+                       HeightRequest="40"
+                       HasShadow="False"
+                       HorizontalOptions="Center"
+                       Padding="0">
+                    <Label Text="&#xe56c;" 
+                           FontFamily="MaterialSymbols"
+                           FontSize="20" 
+                           TextColor="#3352FF"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
                 </Frame>
+
+                <!-- Nombre de la app -->
+                <Label Grid.Row="1" 
+                       Text="FitLife" 
+                       FontSize="24" 
+                       FontAttributes="Bold" 
+                       TextColor="White"
+                       HorizontalOptions="Center" 
+                       Margin="0,15,0,8" />
+
+                <!-- Subtítulo -->
+                <Label Grid.Row="2" 
+                       Text="Panel de Usuario" 
+                       FontSize="13" 
+                       TextColor="White"
+                       Opacity="0.8"
+                       HorizontalOptions="Center" />
             </Grid>
 
             <!-- Opciones del menú -->
-            <StackLayout Padding="0" Spacing="0" Margin="0,20,0,0">
+            <StackLayout Padding="0" Spacing="2" Margin="0,25,0,0">
 
                 <!-- Rutina -->
-                <Grid x:Name="RutinaOption" BackgroundColor="Transparent" Padding="20,15">
+                <Grid x:Name="RutinaOption" BackgroundColor="Transparent" Padding="25,18">
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnRutinaClicked" />
                     </Grid.GestureRecognizers>
@@ -41,12 +69,22 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Column="0" Text="💪" FontSize="18" TextColor="White" VerticalOptions="Center" />
-                    <Label Grid.Column="1" Text="Rutina" FontSize="16" TextColor="White" VerticalOptions="Center" Margin="15,0,0,0" />
+                    <Label Grid.Column="0" 
+                           Text="&#xe82a;" 
+                           FontFamily="MaterialSymbols"
+                           FontSize="22" 
+                           TextColor="White" 
+                           VerticalOptions="Center" />
+                    <Label Grid.Column="1" 
+                           Text="Mi Rutina" 
+                           FontSize="16" 
+                           TextColor="White" 
+                           VerticalOptions="Center" 
+                           Margin="18,0,0,0" />
                 </Grid>
 
                 <!-- Asistencia -->
-                <Grid x:Name="AsistenciaOption" BackgroundColor="Transparent" Padding="20,15">
+                <Grid x:Name="AsistenciaOption" BackgroundColor="Transparent" Padding="25,18">
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnAsistenciaClicked" />
                     </Grid.GestureRecognizers>
@@ -55,12 +93,22 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Column="0" Text="📅" FontSize="18" TextColor="White" VerticalOptions="Center" />
-                    <Label Grid.Column="1" Text="Asistencia" FontSize="16" TextColor="White" VerticalOptions="Center" Margin="15,0,0,0" />
+                    <Label Grid.Column="0" 
+                           Text="&#xe935;" 
+                           FontFamily="MaterialSymbols"
+                           FontSize="22" 
+                           TextColor="White" 
+                           VerticalOptions="Center" />
+                    <Label Grid.Column="1" 
+                           Text="Asistencia" 
+                           FontSize="16" 
+                           TextColor="White" 
+                           VerticalOptions="Center" 
+                           Margin="18,0,0,0" />
                 </Grid>
 
                 <!-- Mi Progreso -->
-                <Grid x:Name="ProgresoOption" BackgroundColor="Transparent" Padding="20,15">
+                <Grid x:Name="ProgresoOption" BackgroundColor="Transparent" Padding="25,18">
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnProgresoClicked" />
                     </Grid.GestureRecognizers>
@@ -69,12 +117,22 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Column="0" Text="📈" FontSize="18" TextColor="White" VerticalOptions="Center" />
-                    <Label Grid.Column="1" Text="Mi Progreso" FontSize="16" TextColor="White" VerticalOptions="Center" Margin="15,0,0,0" />
+                    <Label Grid.Column="0" 
+                           Text="&#xe8e5;" 
+                           FontFamily="MaterialSymbols"
+                           FontSize="22" 
+                           TextColor="White" 
+                           VerticalOptions="Center" />
+                    <Label Grid.Column="1" 
+                           Text="Mi Progreso" 
+                           FontSize="16" 
+                           TextColor="White" 
+                           VerticalOptions="Center" 
+                           Margin="18,0,0,0" />
                 </Grid>
 
                 <!-- Mi Perfil -->
-                <Grid x:Name="PerfilOption" BackgroundColor="Transparent" Padding="20,15">
+                <Grid x:Name="PerfilOption" BackgroundColor="Transparent" Padding="25,18">
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnPerfilClicked" />
                     </Grid.GestureRecognizers>
@@ -83,12 +141,22 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Column="0" Text="👤" FontSize="18" TextColor="White" VerticalOptions="Center" />
-                    <Label Grid.Column="1" Text="Mi Perfil" FontSize="16" TextColor="White" VerticalOptions="Center" Margin="15,0,0,0" />
+                    <Label Grid.Column="0" 
+                           Text="&#xe7fd;" 
+                           FontFamily="MaterialSymbols"
+                           FontSize="22" 
+                           TextColor="White" 
+                           VerticalOptions="Center" />
+                    <Label Grid.Column="1" 
+                           Text="Mi Perfil" 
+                           FontSize="16" 
+                           TextColor="White" 
+                           VerticalOptions="Center" 
+                           Margin="18,0,0,0" />
                 </Grid>
 
                 <!-- Mis Reportes -->
-                <Grid x:Name="ReportesOption" BackgroundColor="Transparent" Padding="20,15">
+                <Grid x:Name="ReportesOption" BackgroundColor="Transparent" Padding="25,18">
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnReportesClicked" />
                     </Grid.GestureRecognizers>
@@ -97,14 +165,31 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Column="0" Text="📊" FontSize="18" TextColor="White" VerticalOptions="Center" />
-                    <Label Grid.Column="1" Text="Mis Reportes" FontSize="16" TextColor="White" VerticalOptions="Center" Margin="15,0,0,0" />
+                    <Label Grid.Column="0" 
+                           Text="&#xe85d;" 
+                           FontFamily="MaterialSymbols"
+                           FontSize="22" 
+                           TextColor="White" 
+                           VerticalOptions="Center" />
+                    <Label Grid.Column="1" 
+                           Text="Mis Reportes" 
+                           FontSize="16" 
+                           TextColor="White" 
+                           VerticalOptions="Center" 
+                           Margin="18,0,0,0" />
                 </Grid>
 
             </StackLayout>
 
+            <!-- Divisor elegante -->
+            <BoxView BackgroundColor="White" 
+                     Opacity="0.2" 
+                     HeightRequest="1" 
+                     Margin="25,30,25,20" 
+                     VerticalOptions="EndAndExpand" />
+
             <!-- Cerrar Sesión -->
-            <Grid BackgroundColor="Transparent" Padding="20,15" VerticalOptions="EndAndExpand" Margin="0,0,0,20">
+            <Grid BackgroundColor="Transparent" Padding="25,18" Margin="0,0,0,25">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnCerrarSesionClicked" />
                 </Grid.GestureRecognizers>
@@ -113,21 +198,137 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" Text="🚪" FontSize="18" TextColor="White" VerticalOptions="Center" />
-                <Label Grid.Column="1" Text="Cerrar Sesión" FontSize="16" TextColor="White" VerticalOptions="Center" Margin="15,0,0,0" />
+                <Label Grid.Column="0" 
+                       Text="&#xe9ba;" 
+                       FontFamily="MaterialSymbols"
+                       FontSize="22" 
+                       TextColor="White" 
+                       VerticalOptions="Center" />
+                <Label Grid.Column="1" 
+                       Text="Cerrar Sesión" 
+                       FontSize="16" 
+                       TextColor="White" 
+                       VerticalOptions="Center" 
+                       Margin="18,0,0,0" />
             </Grid>
 
         </StackLayout>
 
-        <!-- Contenido Principal -->
+        <!-- Contenido Principal Mejorado -->
         <ScrollView Grid.Column="1" BackgroundColor="#F8F9FA">
-            <StackLayout x:Name="ContenidoPrincipal" Padding="30">
-                <Label Text="Bienvenido a FitLife" FontSize="24" FontAttributes="Bold" TextColor="#1F2937" />
-                <Label Text="Selecciona una opción del menú lateral para comenzar" FontSize="16" TextColor="#6B7280" Margin="0,10,0,0" />
+            <StackLayout x:Name="ContenidoPrincipal" Padding="40">
+
+                <!-- Header del contenido -->
+                <StackLayout Spacing="10" Margin="0,0,0,30">
+                    <Label Text="Bienvenido a FitLife" 
+                           FontSize="32" 
+                           FontAttributes="Bold" 
+                           TextColor="#1F2937" />
+                    <Label Text="Selecciona una opción del menú para comenzar tu entrenamiento" 
+                           FontSize="18" 
+                           TextColor="#6B7280" 
+                           LineHeight="1.5" />
+                </StackLayout>
+
+                <!-- Cards de bienvenida -->
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="20" RowSpacing="20">
+
+                    <!-- Card 1: Rutina -->
+                    <Frame Grid.Column="0" Grid.Row="0" 
+                           BackgroundColor="White" 
+                           CornerRadius="15" 
+                           HasShadow="True" 
+                           Padding="25">
+                        <StackLayout Spacing="12">
+                            <Label Text="&#xe82a;" 
+                                   FontFamily="MaterialSymbols"
+                                   FontSize="28" 
+                                   TextColor="#3352FF" 
+                                   HorizontalOptions="Start" />
+                            <Label Text="Tu Rutina" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#1F2937" />
+                            <Label Text="Accede a tu plan de entrenamiento personalizado" 
+                                   FontSize="14" 
+                                   TextColor="#6B7280" 
+                                   LineHeight="1.4" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 2: Progreso -->
+                    <Frame Grid.Column="1" Grid.Row="0" 
+                           BackgroundColor="White" 
+                           CornerRadius="15" 
+                           HasShadow="True" 
+                           Padding="25">
+                        <StackLayout Spacing="12">
+                            <Label Text="&#xe8e5;" 
+                                   FontFamily="MaterialSymbols"
+                                   FontSize="28" 
+                                   TextColor="#10B981" 
+                                   HorizontalOptions="Start" />
+                            <Label Text="Tu Progreso" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#1F2937" />
+                            <Label Text="Visualiza tu evolución y estadísticas" 
+                                   FontSize="14" 
+                                   TextColor="#6B7280" 
+                                   LineHeight="1.4" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 3: Asistencia -->
+                    <Frame Grid.Column="0" Grid.Row="1" 
+                           BackgroundColor="White" 
+                           CornerRadius="15" 
+                           HasShadow="True" 
+                           Padding="25">
+                        <StackLayout Spacing="12">
+                            <Label Text="&#xe935;" 
+                                   FontFamily="MaterialSymbols"
+                                   FontSize="28" 
+                                   TextColor="#F59E0B" 
+                                   HorizontalOptions="Start" />
+                            <Label Text="Asistencia" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#1F2937" />
+                            <Label Text="Registra tus visitas al gimnasio" 
+                                   FontSize="14" 
+                                   TextColor="#6B7280" 
+                                   LineHeight="1.4" />
+                        </StackLayout>
+                    </Frame>
+
+                    <!-- Card 4: Perfil -->
+                    <Frame Grid.Column="1" Grid.Row="1" 
+                           BackgroundColor="White" 
+                           CornerRadius="15" 
+                           HasShadow="True" 
+                           Padding="25">
+                        <StackLayout Spacing="12">
+                            <Label Text="&#xe7fd;" 
+                                   FontFamily="MaterialSymbols"
+                                   FontSize="28" 
+                                   TextColor="#8B5CF6" 
+                                   HorizontalOptions="Start" />
+                            <Label Text="Mi Perfil" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#1F2937" />
+                            <Label Text="Gestiona tu información personal" 
+                                   FontSize="14" 
+                                   TextColor="#6B7280" 
+                                   LineHeight="1.4" />
+                        </StackLayout>
+                    </Frame>
+
+                </Grid>
+
             </StackLayout>
         </ScrollView>
 
     </Grid>
-    
-    
 </ContentPage>
